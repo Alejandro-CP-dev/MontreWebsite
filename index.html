@@ -20,8 +20,7 @@
                         "background-dark": "#1a1514",
                     },
                     fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "sans": ["Manrope", "sans-serif"]
+                         "display": ["Manrope", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
                 },
@@ -43,16 +42,18 @@
 <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 <div class="flex items-center gap-12">
-<a class="flex items-center gap-2 group" href="#">
+<a class="flex items-center gap-2 group" href="index.html">
 <span class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:scale-110">layers</span>
 <h1 class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-white">MONTRE MAKEUP</h1>
 </a>
+
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="#">Tienda</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="#">Colecciones</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="tienda.html">Tienda</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="#Collection">Colecciones</a>
 <a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="#">Nosotros</a>
 <a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest" href="#">Blog</a>
 </nav>
+
 </div>
 <div class="flex items-center gap-4">
 <div class="relative hidden sm:block">
@@ -71,6 +72,7 @@
 </div>
 </header>
 <main>
+
 <!-- Hero Section -->
 <section class="relative w-full min-h-[85vh] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0 flex">
@@ -85,17 +87,18 @@
 </div>
 </div>
 </div>
-<div class="hidden lg:block lg:w-1/2 bg-cover bg-center" data-alt="High-end fashion model with glowing makeup and soft pink background" style="background-image: url('{{DATA:IMAGE:IMAGE_4}}'); background-size: cover; background-position: center;"></div>
+<div class="hidden lg:block lg:w-1/2 bg-cover bg-center" data-alt="High-end fashion model with glowing makeup and soft pink background" style="background-image: url('backround.png'); background-size: cover; background-position: center;"></div>
 </div>
 <div class="lg:hidden absolute inset-0 -z-10 opacity-30">
 <img class="w-full h-full object-cover" data-alt="Background model shot for mobile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXk1XjJiww_qKe1axmorqL1Pl-v7fV22P30qJoGn2soeB1QPS77moBzXGhnJzkphMGx8npBVyfkbrxdtQvXne_K9BQmPWjw0kJZMB22Maa2c-Y2T8BdNCNPILZ9AQKjw9sxHD4wB6wbc0KXKqzAMij5o4BdXHunn0DehRZNdqdJqR3yVCb1ypyrwXiMGYLiZcT9zAL_SFO7qLKgGBmkFo3p_XQUU_CYq5opm46CL40jZf849av7mXmoGHYhutXyLmAhatzcpPanA"/>
 </div>
 </section>
+
 <!-- New Arrivals Section -->
-<section class="py-24 px-6 max-w-7xl mx-auto">
+<section id="Collection" class="py-24 px-6 max-w-7xl mx-auto">
 <div class="flex items-end justify-between mb-12">
 <div>
-<h3 class="text-3xl font-bold mb-2">La Colección Montre</h3>
+<h3  class="text-3xl font-bold mb-2">La Colección Montre</h3>
 <p class="text-slate-500 uppercase tracking-widest text-sm">Esenciales Seleccionados por Artistas</p>
 </div>
 <a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">Ver Todo <span class="material-symbols-outlined">arrow_forward</span></a>
@@ -156,6 +159,7 @@
 </div>
 </div>
 </section>
+
 <!-- Category Banner -->
 <section class="bg-primary/5 py-20 px-6">
 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -174,6 +178,7 @@
 </div>
 </div>
 </section>
+
 <!-- Best Sellers Grid -->
 <section class="py-24 px-6 max-w-7xl mx-auto">
 <div class="text-center mb-16">
@@ -222,6 +227,7 @@
 </div>
 </div>
 </section>
+
 <!-- Beauty Tips Blog Section -->
 <section class="py-24 px-6 bg-primary/5">
 <div class="max-w-7xl mx-auto">
@@ -278,6 +284,7 @@
 </div>
 </div>
 </section>
+
 <!-- Newsletter Section -->
 <section class="py-24 px-6 text-center max-w-4xl mx-auto">
 <h3 class="text-4xl font-black mb-6">Únete al Club Radiance</h3>
@@ -289,6 +296,7 @@
 <p class="mt-6 text-xs text-slate-400">Al unirte, aceptas nuestros Términos de Servicio y Política de Privacidad.</p>
 </section>
 </main>
+
 <!-- Footer -->
 <footer class="bg-slate-900 text-white py-20 px-6">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
