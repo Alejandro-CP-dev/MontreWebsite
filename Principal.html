@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+        rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MONTRE MAKEUP | Professional Artistry</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#dca79e",
+                        "primary-dark": "#c58d83",
+                        "background-light": "#faf8f7",
+                        "background-dark": "#1a1514",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .product-card:hover .quick-add {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .quick-add {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .line {
+            width: 24px;
+            height: 2px;
+            background: currentColor;
+            position: absolute;
+            transition: all .4s ease;
+        }
+
+        .line.top {
+            transform: translateY(-6px);
+        }
+
+        .line.bot {
+            transform: translateY(6px);
+        }
+
+        /* Animación X */
+        .menu-open .top {
+            transform: rotate(45deg);
+        }
+
+        .menu-open .mid {
+            opacity: 0;
+        }
+
+        .menu-open .bot {
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <!-- Sticky Navigation -->
+    <!-- Menú Mobile -->
+    <nav id="mobileMenu" class="fixed top-0 right-0 h-full w-[75%] max-w-sm 
+ bg-white dark:bg-background-dark 
+ translate-x-full transition-transform duration-500 ease-out 
+ z-[60] flex flex-col 
+ pt-28 px-10 gap-8">
+
+        <a class="text-2xl font-bold uppercase tracking-widest border-b border-primary/20 pb-4"
+            href="tienda.html">Tienda</a>
+        <a class="text-2xl font-bold uppercase tracking-widest border-b border-primary/20 pb-4"
+            href="#Collection">Colecciones</a>
+        <a class="text-2xl font-bold uppercase tracking-widest border-b border-primary/20 pb-4" href="#">Nosotros</a>
+        <a class="text-2xl font-bold uppercase tracking-widest" href="#">Blog</a>
+    </nav>
+
+    <!-- Overlay -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] hidden"></div>
+    <!-- Botón hamburguesa -->
+    <button id="menuBtn" aria-label="Abrir menú" aria-expanded="false"
+        class="md:hidden flex flex-col justify-center items-center w-10 h-10 relative z-[60] text-slate-900 dark:text-white">
+        <span class="line top"></span> <span class="line mid"></span> <span class="line bot"></span>
+    </button>
+    <header
+        class="sticky top-0 z-30 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-12"> <a class="flex items-center gap-2 group" href="index.html"> <span
+                        class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:scale-110">layers</span>
+                    <h1 class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-white">MONTRE MAKEUP
+                    </h1>
+                </a>
+
+
+                <!-- Menú Desktop -->
+                <nav class="hidden md:flex items-center gap-8"> <a
+                        class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                        href="tienda.html">Tienda</a> <a
+                        class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                        href="#Collection">Colecciones</a> <a
+                        class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                        href="#">Nosotros</a> <a
+                        class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                        href="#">Blog</a> </nav>
+
+
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    <input
+                        class="pl-10 pr-4 py-2 bg-primary/5 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64"
+                        placeholder="Buscar..." type="text" />
+                </div>
+                <button class="p-2 hover:bg-primary/10 rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined">favorite</span>
+                </button>
+                <button class="p-2 hover:bg-primary/10 rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+                </button>
+                <div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary/20"
+                    data-alt="User profile avatar portrait"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3_EMhoZ9XDnUQfeTvxjhxSG_p8STvczvyVfsdXkkUymbgTaQJqpVgHc3dlzfRrCH14FSwntxwk3pr0KuX_r37zQ56thJq30RbC2TdvcTin1-6ZJpev96ndurgQYwfcM9paW2urbCRqNvRw9fTpScfDrcDEUDcjbpxLIn9khDuHmvQEAuvXlcKNlY4ZksMpPKr6uHOvS7g_bS61thb-nEbZrR-qpXwkqoZ-6hNVOGcSeDQtzgdjuR2_Q2hODqXZNGRqSlwt34Kfg')">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative w-full min-h-[85vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0 flex">
+                <div class="w-full lg:w-1/2 bg-primary/5 flex items-center justify-center p-12">
+                    <div class="max-w-xl animate-fade-in">
+                        <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">La Colección de
+                            Autor</span>
+                        <h2 class="text-6xl lg:text-8xl font-black text-slate-900 dark:text-white leading-[1.1] mb-8">
+                            Arte en Cada <br /><span class="text-primary italic font-medium">Detalle.</span></h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-md">Fórmulas de
+                            grado profesional diseñadas por artistas para todos. Descubre el secreto de un acabado
+                            impecable y natural.</p>
+                        <div class="flex gap-4">
+                            <button
+                                class="px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/20">Comprar
+                                la Colección</button>
+                            <button
+                                class="px-8 py-4 border-2 border-primary text-primary rounded-full font-bold hover:bg-primary/10 transition-all">Ver
+                                Video</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block lg:w-1/2 bg-cover bg-center"
+                    data-alt="High-end fashion model with glowing makeup and soft pink background"
+                    style="background-image: url('backround.png'); background-size: cover; background-position: center;">
+                </div>
+            </div>
+            <div class="lg:hidden absolute inset-0 -z-10 opacity-30">
+                <img class="w-full h-full object-cover" data-alt="Background model shot for mobile"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXk1XjJiww_qKe1axmorqL1Pl-v7fV22P30qJoGn2soeB1QPS77moBzXGhnJzkphMGx8npBVyfkbrxdtQvXne_K9BQmPWjw0kJZMB22Maa2c-Y2T8BdNCNPILZ9AQKjw9sxHD4wB6wbc0KXKqzAMij5o4BdXHunn0DehRZNdqdJqR3yVCb1ypyrwXiMGYLiZcT9zAL_SFO7qLKgGBmkFo3p_XQUU_CYq5opm46CL40jZf849av7mXmoGHYhutXyLmAhatzcpPanA" />
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section id="Collection" class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-2">La Colección Montre</h3>
+                    <p class="text-slate-500 uppercase tracking-widest text-sm">Esenciales Seleccionados por Artistas
+                    </p>
+                </div>
+                <a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">Ver Todo <span
+                        class="material-symbols-outlined">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card group cursor-pointer">
+                    <div class="relative aspect-[4/5] bg-slate-100 rounded-xl overflow-hidden mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="Hydrating lipstick in gold casing"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZwSCykEV90V0SGDcGSH0eh2iwbd1c9h_SuFGgW1z66FNiPpQXe7aBr7ivuN2Lmi5bTpOCkELWrTmtON2zIqk2tnbkcj-6hTLM36k0wkut8Z5unD3XKmznzx3txhdKSDP0jm_baNB9qex9ZcpsyctgM4uW-ueWjX9_CiVcUekAMr3AQqcRP4N7JglwfcKtO4lWFNkiYiaJiWwIrRVjsBjjEJq3aYj-fICGRRkwWNIPqrbQo7ZTv2OqziZ5Mr8rYyUmedCyCvC8Q" />
+                        <div class="quick-add absolute bottom-4 inset-x-4">
+                            <button
+                                class="w-full py-3 bg-white/90 backdrop-blur text-slate-900 rounded-full text-sm font-bold shadow-xl hover:bg-primary hover:text-white transition-colors">
+                                QUICK ADD — $32.00
+                            </button>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">New</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Labial Hidratante</h4>
+                    <p class="text-slate-500 text-sm">Esenciales Seleccionados por Artistas</p>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card group cursor-pointer">
+                    <div class="relative aspect-[4/5] bg-slate-100 rounded-xl overflow-hidden mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="Premium velvet matte lipstick collection"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT-8EMhnvXtZGigAGrl7nGFNniJLhzqXE8eu1T5zrzllO3AfD4w0_SfXpHhipNahRDaKVvfZnQKksDVVzIy_T7B9wJDjjxgztUwhqQeZ8rEb-WaGpcx6j-ZyowPGNg3T8ali-88mNU-Uitpzm-Eju4Lw4EIWqkIpDCzoEKYJ4fUqtkNOQUjQwgAohuT4f71yai73WvVYrOaZgGVWzGj4TB1LCptuwMPNKjY63WikVKKKfslS9aQz-L0xwDs95MKBiZ0ewUszZZhg" />
+                        <div class="quick-add absolute bottom-4 inset-x-4">
+                            <button
+                                class="w-full py-3 bg-white/90 backdrop-blur text-slate-900 rounded-full text-sm font-bold shadow-xl hover:bg-primary hover:text-white transition-colors">
+                                QUICK ADD — $34.00
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Mate Terciopelo</h4>
+                    <p class="text-slate-500 text-sm">Esenciales Seleccionados por Artistas</p>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="product-card group cursor-pointer">
+                    <div class="relative aspect-[4/5] bg-slate-100 rounded-xl overflow-hidden mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="Golden luminous face glaze bottle"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxk_QSDX5x4n2MR9yiffKXj-P_Y6HbjavcPdsx5AEn1i03Hn5FdDNGfCYdm-oaRtYffCMzxb0SN8CYQI2rLBQQbTfLjVhji62dlumzQN4bwBqeqmh9SZXoxbqiKaLVVPjtJpbhLbU5XfP0IB3e020q2IPXaTUv7VGGOsCIY_GwvJVcXxJRT93camHAcM_0KlN9Ik9QFxlzHaI5_CVc1CDu3wDZfak5cWpq4fQFeDlqlyjBJ8_rWU_EfTwFRFaFEggat8emPxEwkA" />
+                        <div class="quick-add absolute bottom-4 inset-x-4">
+                            <button
+                                class="w-full py-3 bg-white/90 backdrop-blur text-slate-900 rounded-full text-sm font-bold shadow-xl hover:bg-primary hover:text-white transition-colors">
+                                QUICK ADD — $28.00
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Brillo Luminoso</h4>
+                    <p class="text-slate-500 text-sm">Esenciales Seleccionados por Artistas</p>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card group cursor-pointer">
+                    <div class="relative aspect-[4/5] bg-slate-100 rounded-xl overflow-hidden mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="Sheer satin face powder compact"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvQTyS46kbJq5GGHZcQSELVWRa0zli2_arWA2F8suFzHgDRqY2mpPDzLOkDx0r4qcNJroQw97ul_MKNy4350W9MtAaffBdwndcIbynlm4oJrDRR7aLw9FaiGSaJtdOtRmTc29cHYd2YVA6iZxv5ywRG8nXXsk7fywNg9ZKlMYvG-reajweyR8WMe5IHyU5zyIiSRMgu3hxpIOcKnuSRSv2y4K-w6VZ3cjMWKpj_3Deb5M-tqjK9e6ItqCCmFze3FITUrewR3GRNQ" />
+                        <div class="quick-add absolute bottom-4 inset-x-4">
+                            <button
+                                class="w-full py-3 bg-white/90 backdrop-blur text-slate-900 rounded-full text-sm font-bold shadow-xl hover:bg-primary hover:text-white transition-colors">
+                                QUICK ADD — $30.00
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Satén Transparente</h4>
+                    <p class="text-slate-500 text-sm">Esenciales Seleccionados por Artistas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Banner -->
+        <section class="bg-primary/5 py-20 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover" data-alt="Close up of luxury makeup brushes and palettes"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcdnOJP3yt3FdeFWgREF9qhNKqcR7I2jWZlzFHmSaQCXCZiaTTBqtrFWJAJfOSIQ4VJs0EhaOHYt5dMdbI2DxszHEAtT9dlCSkeikS4VwsVpv89cqXkJKXwif-ONJwhIlyVE5YLZUDFBy5XnuMtuVwgBFAHIiE1f8Q7MsAYpByB_FiwqeSCc6kziPVdw8BUFZDYbYxM49P2dZSJ6HZy35p2zkQQTVmZmk21DvcciDX6yUBkEP6uvwGwf8f5fXCddszFybTq_YqlA" />
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-black tracking-tight">Arte en Cada <br /><span
+                            class="text-primary italic font-medium">Detalle.</span></h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">Fórmulas de grado profesional
+                        diseñadas por artistas para todos. Descubre el secreto de un acabado impecable y natural.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 font-semibold"><span
+                                class="material-symbols-outlined text-primary">check_circle</span> 100% Vegano y Libre
+                            de Crueldad</li>
+                        <li class="flex items-center gap-3 font-semibold"><span
+                                class="material-symbols-outlined text-primary">check_circle</span> Mangos ergonómicos
+                            hechos a mano</li>
+                        <li class="flex items-center gap-3 font-semibold"><span
+                                class="material-symbols-outlined text-primary">check_circle</span> Tecnología de fibra
+                            antimicrobiana</li>
+                    </ul>
+                    <button
+                        class="px-10 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all">Explorar
+                        la Colección de Herramientas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers Grid -->
+        <section class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black mb-4">Íconos Atemporales</h3>
+                <p class="text-slate-500 max-w-lg mx-auto">Los productos sin los que nuestra comunidad no puede vivir.
+                    Probados y amados por millones.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Best Seller 1 -->
+                <div
+                    class="relative group bg-white dark:bg-slate-900 p-8 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm">
+                    <div
+                        class="absolute -top-4 right-8 bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
+                        #1</div>
+                    <img class="w-32 h-32 mx-auto object-contain mb-6 group-hover:scale-110 transition-transform"
+                        data-alt="Luxury eye shadow palette"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1m74JFiKXyKrReVBqGIwX1i9IXWlKpVbjHth61Q3yn1huIlBwIG0Vy6LB2qy3kz1SH5kHC7vXxa4bIe8zQK--29aulr9MVLFLTPp6kJhc0a7eR0jx-Yp945iVlxkfDVXTRd7iLuVcPDaJ38hzK5xvkv6DJeF08S4iYXkEPb_TlGXFe3VPfakGt7Yar3HHd3Awc-nDGOpxY-_DqGlfj5aI4lUk8cDBkcfRmdG1YQ5F45N8FvIumwaf-euN_QzgDWTBwVBFtplqvw" />
+                    <h4 class="font-bold text-xl text-center mb-2">Paleta Brillo Infinito</h4>
+                    <p class="text-slate-500 text-center text-sm mb-6 leading-relaxed">Una paleta versátil de 12 tonos
+                        tanto para looks naturales de día como para noches dramáticas.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-black text-xl">$54.00</span>
+                        <button
+                            class="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Best Seller 2 -->
+                <div
+                    class="relative group bg-white dark:bg-slate-900 p-8 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm">
+                    <div
+                        class="absolute -top-4 right-8 bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
+                        #2</div>
+                    <img class="w-32 h-32 mx-auto object-contain mb-6 group-hover:scale-110 transition-transform"
+                        data-alt="Foundation bottle with pump"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi4ef88LfgC3f2V_zreVBFvIUNucsq_XEbfjUFnOVUX8NKQJcINXvNrdIIHzH1ZMFyPLFNjV25dHvYC7Lz6mHxb6ehUpmXtk3KUcN-xUfsH4ZYgsxwvnnIa81fqZOD37uOhlMNVT8b6AAyRty9LF5BTPT2jZk2PGOGpWHwf871KRGGznamottqmBBIzVd_Vqnk_apOAWRDWTEmfIMB7tTo9-k2amYvQH7U2jX8vtjIm5d-n0BtuVBcqCPMWreCytnO6NCbXPAqpA" />
+                    <h4 class="font-bold text-xl text-center mb-2">Base Segunda Piel</h4>
+                    <p class="text-slate-500 text-center text-sm mb-6 leading-relaxed">Base ligera que difumina las
+                        imperfecciones mientras deja respirar tu piel natural.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-black text-xl">$48.00</span>
+                        <button
+                            class="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Best Seller 3 -->
+                <div
+                    class="relative group bg-white dark:bg-slate-900 p-8 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm">
+                    <div
+                        class="absolute -top-4 right-8 bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
+                        #3</div>
+                    <img class="w-32 h-32 mx-auto object-contain mb-6 group-hover:scale-110 transition-transform"
+                        data-alt="Mascara wand and tube"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3wsht7RitWE6phfNnbCXaNKyikl8C82vdkfQtdnauDOSePjAY-Nk3THvgAgAQeC6ReQixNmf2C2r6r_H1BGnaSFsjDZbVWlnxdTVAZSR00Dix71VpzWeLbyFr68IbIr5RaWVlKE7YLNojbQn1Pswa7QXJgf5h2wAmD8NWl891EbdSNxCoKJEPKpFdcHsTOhCSr7n52VuDpsh1QxV2UbpZDQDEX_QZSGwIBYP_b7xxkNSD9_oJc_HxCmVK5v2Xd0zjfsFsqgW8RA" />
+                    <h4 class="font-bold text-xl text-center mb-2">Máscara Alarga y Riza</h4>
+                    <p class="text-slate-500 text-center text-sm mb-6 leading-relaxed">Longitud y volumen instantáneos
+                        que se mantienen durante 24 horas sin descascararse ni correrse.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-black text-xl">$26.00</span>
+                        <button
+                            class="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beauty Tips Blog Section -->
+        <section class="py-24 px-6 bg-primary/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <h3 class="text-4xl font-black mb-2">Masterclass de Artistas</h3>
+                        <p class="text-slate-500">Técnicas profesionales y secretos detrás de escena de nuestros mejores
+                            artistas.</p>
+                    </div>
+                    <button
+                        class="px-8 py-3 bg-white dark:bg-slate-800 rounded-full font-bold text-sm shadow-sm hover:shadow-md transition-shadow">Leer
+                        Todas las Guías</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Model with dewy skin finish"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfUpfBaTCUc0uMSJXxbRtyWDA4S_eiAi3k2pSgfsXuzGG0Cptbpyy3Mwie-8CE0bf5X3cgUkfDTC_aZI-Pg-2u-Xxtp03rozm3SM3kMBlQ_331ojx5q_A_Qw4iHsYoideHu0gSLP8N0nJdHSK9MSHuQlI7UwqCMaz4XEYeIxvo5eYJanPru2gJEer60_Jo1xqs4kbiPQKZ08YyZnatqm-stPksvJckizTxdA2Rd2Dj7KeAAfKiQQu4JqMNMk7kY3oVHZbzCKQ2ng" />
+                        </div>
+                        <span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3 block">The Signature
+                            Collection</span>
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">5
+                            Pasos para una Base Radiante Perfecta</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Aprende los secretos
+                            para ese resplandor iluminado desde adentro que dura todo el día sin parecer graso.</p>
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400">
+                            <span>5 Min Read</span>
+                            <span>•</span>
+                            <span>June 12, 2024</span>
+                        </div>
+                    </article>
+                    <!-- Blog Card 2 -->
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Model with classic red lips"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmKKoNZ648REKDT4TO6S-mDC7C0KUci6u3ZAHetc-S0RskRn8cEALYE0knlHr7vVg9vUGMV2ytYBZSgHhMI4ILntqeUd5-_FtLA2qaVuxDf7v93QCjv-L9GdGI1I79j-RCLBpEOUf04LBXlntgYzQZQwO2hpYo4FihT6tX7fAu37_o_4dg6BSS4MXT-UBlL1ku-APAcIk0r-489sNA4PWjiRRui-EEPHYYBUHdgh-ZtxYTd1_v8OmO2EehKc_RRYZ8hmp1xli4iw" />
+                        </div>
+                        <span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3 block">The Signature
+                            Collection</span>
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
+                            Guía para el Labial Rojo Perfecto</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Desde subtonos hasta
+                            aplicación, encuentra tu tono carmesí característico y haz que dure.</p>
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400">
+                            <span>8 Min Read</span>
+                            <span>•</span>
+                            <span>June 08, 2024</span>
+                        </div>
+                    </article>
+                    <!-- Blog Card 3 -->
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Clean minimalist beauty products setup"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCg7S9w4BFf-ChMbOwxBqXulj8YFAEZWLFf6pFNMWgmLJTBzgSRnOE_g89uTQcoXzu3ziZztKMkhN26s6YctK2PZXwW7OVNQcGS8sajNraLQw2SxcL59LkyITbrNyJ8Gv4z8DzZ8P1_U7V5Fu0pU5vuTIGuNEqhNWUBfm3Lez7eMEBxQs6ntCMazG63rh-slZXtYj9TlQSsZGhGuvXqutkGWnC53iIaEMYlgzO2MycyT8i16JzHRRwCwz8CIAIMxc3wyUK-LA6iw" />
+                        </div>
+                        <span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3 block">The Signature
+                            Collection</span>
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
+                            Belleza Sostenible: Nuestra Misión Recargable</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Descubre cómo nuestro
+                            nuevo sistema de empaque reduce los residuos sin comprometer el lujo.</p>
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400">
+                            <span>4 Min Read</span>
+                            <span>•</span>
+                            <span>June 01, 2024</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-24 px-6 text-center max-w-4xl mx-auto">
+            <h3 class="text-4xl font-black mb-6">Únete al Club Radiance</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-lg mb-10">Fórmulas de grado profesional diseñadas por
+                artistas para todos. Descubre el secreto de un acabado impecable y natural.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                    class="flex-1 px-6 py-4 bg-white dark:bg-slate-800 border border-primary/20 rounded-full focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="Tu correo electrónico" type="email" />
+                <button
+                    class="px-10 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform">Suscribirse</button>
+            </form>
+            <p class="mt-6 text-xs text-slate-400">Al unirte, aceptas nuestros Términos de Servicio y Política de
+                Privacidad.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-8">
+                    <span class="material-symbols-outlined text-primary text-3xl">layers</span>
+                    <h2 class="text-xl font-extrabold tracking-tighter">MONTRE MAKEUP</h2>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Elevating beauty through professional expertise,
+                    premium formulations, and a commitment to the art of makeup since 2018.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm">camera</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-8">Tienda</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Best Sellers</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Lipstick &amp; Gloss</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Face &amp; Foundation</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Eye Palettes</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Gift Sets</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-8">Tienda</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Shipping Policy</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Returns &amp; Exchanges</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Store Locator</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-8">Tienda</h4>
+                <div class="space-y-4 text-slate-400 text-sm">
+                    <p class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        742 Luxury Avenue,<br />Paris, France 75001
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        +33 1 23 45 67 89
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        concierge@luxebeauty.com
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto pt-20 mt-20 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500 text-xs">© 2024 MONTRE MAKEUP ARTISTRY. TODOS LOS DERECHOS RESERVADOS.</p>
+            <div class="flex gap-8 text-xs text-slate-500">
+                <a class="hover:text-white" href="#">Privacidad</a>
+                <a class="hover:text-white" href="#">Términos</a>
+                <a class="hover:text-white" href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const body = document.body;
+    const focusableSelectors = 'a, button, input, textarea, select';
+    let focusables = [];
+
+    function trapFocus() {
+        focusables = mobileMenu.querySelectorAll(focusableSelectors);
+        if (focusables.length) focusables[0].focus();
+    }
+
+    function openMenu() {
+        mobileMenu.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        menuBtn.classList.add('menu-open');
+        menuBtn.setAttribute("aria-expanded", "true");
+        body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        menuBtn.classList.remove('menu-open');
+        menuBtn.setAttribute("aria-expanded", "false");
+        body.classList.remove('overflow-hidden');
+    }
+
+    menuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    // cerrar al hacer click en link
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    let startX = 0;
+
+    mobileMenu.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+    });
+
+    mobileMenu.addEventListener('touchend', e => {
+        let endX = e.changedTouches[0].clientX;
+        if (endX - startX > 80) {
+            closeMenu();
+        }
+    });
+</script>
+
+</html>
