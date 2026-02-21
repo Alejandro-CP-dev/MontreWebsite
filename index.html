@@ -3,169 +3,175 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Montre Makeup - Iniciar Sesión</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#e23661",
-            "background-light": "#f8f6f6",
-            "background-dark": "#211115",
-          },
-          fontFamily: {
-            "display": ["Manrope", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "1rem",
-            "lg": "2rem",
-            "xl": "3rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Manrope', sans-serif;
-    }
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Montre Makeup - Iniciar Sesión</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e23661",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
 
-    .bg-mesh {
-      background-color: #f8f6f6;
-      background-image: radial-gradient(at 0% 0%, rgba(226, 54, 97, 0.05) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(226, 54, 97, 0.08) 0px, transparent 50%);
-    }
-  </style>
+        .bg-mesh {
+            background-color: #f8f6f6;
+            background-image: radial-gradient(at 0% 0%, rgba(226, 54, 97, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(226, 54, 97, 0.08) 0px, transparent 50%);
+        }
+    </style>
 </head>
 
 <body
-  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
-  <div
-    class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white dark:bg-[#2d1a1f] rounded-xl overflow-hidden shadow-2xl shadow-primary/10">
-    <!-- Columna de Imagen (Hero) -->
-    <div class="hidden lg:block relative overflow-hidden">
-      <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-      <img alt="High-end makeup textures" class="h-full w-full object-cover"
-        data-alt="Luxury makeup brushes and scattered face powder on a soft pink surface"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1yfs9BEGAq6nJl-gLAQMx7rdiWBhS0YsqfJQhUwJjuo_xfrMgNy1psTiuI0M2GaFZRwlDB6IhOKk-ip_sY96pvLMoLevgbN9__RTsxqd7XwXcYh5bRbAEi_Lv2us15Wk-_PamyhfF29YDr8fP4D7uo_C-GajcDdmadiJIN7AxN_WQKDcyKN31Ss_HdoWX847v7BYcZesTZKAPN6EU8W5J0SPYm6TOkyT5y5cDCSMmULskneHYJ4jBTpW8JsK85s8CtK6w47iPWQ" />
-      <div class="absolute bottom-12 left-12 right-12 text-white">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="material-symbols-outlined text-4xl">flare</span>
-          <h2 class="text-3xl font-bold tracking-tight">Montre Makeup</h2>
-        </div>
-        <p class="text-lg font-light opacity-90 max-w-sm">Descubre la elegancia en cada detalle. Tu belleza, redefinida
-          por el arte del maquillaje premium.</p>
-      </div>
-    </div>
-    <!-- Columna de Formulario -->
-    <div class="flex flex-col justify-center p-8 sm:p-12 lg:p-20 bg-mesh">
-      <header class="mb-10 lg:hidden flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary text-3xl">flare</span>
-        <h1 class="text-xl font-bold text-slate-900 dark:text-white">Montre Makeup</h1>
-      </header>
-      <div class="mb-10">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">Bienvenida de nuevo</h2>
-        <p class="text-slate-500 dark:text-slate-400">Ingresa tus datos para acceder a tu colección exclusiva.</p>
-      </div>
-      <form action="#" class="space-y-6">
-        <!-- Campo Email -->
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 px-1" for="email">Correo
-            electrónico</label>
-          <div class="relative group">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <span
-                class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div
+        class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white dark:bg-[#2d1a1f] rounded-xl overflow-hidden shadow-2xl shadow-primary/10">
+        <!-- Columna de Imagen (Hero) -->
+        <div class="hidden lg:block relative overflow-hidden">
+            <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+            <img alt="High-end makeup textures" class="h-full w-full object-cover"
+                data-alt="Luxury makeup brushes and scattered face powder on a soft pink surface"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1yfs9BEGAq6nJl-gLAQMx7rdiWBhS0YsqfJQhUwJjuo_xfrMgNy1psTiuI0M2GaFZRwlDB6IhOKk-ip_sY96pvLMoLevgbN9__RTsxqd7XwXcYh5bRbAEi_Lv2us15Wk-_PamyhfF29YDr8fP4D7uo_C-GajcDdmadiJIN7AxN_WQKDcyKN31Ss_HdoWX847v7BYcZesTZKAPN6EU8W5J0SPYm6TOkyT5y5cDCSMmULskneHYJ4jBTpW8JsK85s8CtK6w47iPWQ" />
+            <div class="absolute bottom-12 left-12 right-12 text-white">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-4xl">flare</span>
+                    <h2 class="text-3xl font-bold tracking-tight">Montre Makeup</h2>
+                </div>
+                <p class="text-lg font-light opacity-90 max-w-sm">Descubre la elegancia en cada detalle. Tu belleza,
+                    redefinida
+                    por el arte del maquillaje premium.</p>
             </div>
-            <input
-              class="block w-full pl-11 pr-4 py-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-slate-900 dark:text-white placeholder:text-slate-400"
-              id="email" name="email" placeholder="tu@correo.com" type="email" />
-          </div>
         </div>
-        <!-- Campo Password -->
-        <div>
-          <div class="flex justify-between items-center mb-2 px-1">
-            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300"
-              for="password">Contraseña</label>
-            <a class="text-xs font-bold text-primary hover:underline transition-all" href="#">¿Olvidaste tu
-              contraseña?</a>
-          </div>
-          <div class="relative group">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <span
-                class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
+        <!-- Columna de Formulario -->
+        <div class="flex flex-col justify-center p-8 sm:p-12 lg:p-20 bg-mesh">
+            <header class="mb-10 lg:hidden flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">flare</span>
+                <h1 class="text-xl font-bold text-slate-900 dark:text-white">Montre Makeup</h1>
+            </header>
+            <div class="mb-10">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">Bienvenida de nuevo
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400">Ingresa tus datos para acceder a tu colección exclusiva.
+                </p>
             </div>
-            <input
-              class="block w-full pl-11 pr-12 py-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-slate-900 dark:text-white placeholder:text-********"
-              id="password" name="password" placeholder="********" type="password" />
-            <button
-              class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-primary transition-colors"
-              type="button">
-              <span class="material-symbols-outlined">visibility</span>
-            </button>
-          </div>
+            <form action="#" class="space-y-6">
+                <!-- Campo Email -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 px-1"
+                        for="email">Correo
+                        electrónico</label>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
+                        </div>
+                        <input
+                            class="block w-full pl-11 pr-4 py-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-slate-900 dark:text-white placeholder:text-slate-400"
+                            id="email" name="email" placeholder="tu@correo.com" type="email" />
+                    </div>
+                </div>
+                <!-- Campo Password -->
+                <div>
+                    <div class="flex justify-between items-center mb-2 px-1">
+                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300"
+                            for="password">Contraseña</label>
+                        <a class="text-xs font-bold text-primary hover:underline transition-all" href="#">¿Olvidaste tu
+                            contraseña?</a>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
+                        </div>
+                        <input
+                            class="block w-full pl-11 pr-12 py-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-slate-900 dark:text-white placeholder:text-********"
+                            id="password" name="password" placeholder="********" type="password" />
+                        <button
+                            class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-primary transition-colors"
+                            type="button">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Recordarme (Opcional pero añade realismo) -->
+                <div class="flex items-center px-1">
+                    <input
+                        class="w-4 h-4 text-primary bg-white dark:bg-background-dark border-slate-300 dark:border-slate-700 rounded focus:ring-primary focus:ring-offset-0"
+                        id="remember" type="checkbox" />
+                    <label class="ml-2 text-sm text-slate-600 dark:text-slate-400" for="remember">Mantener sesión
+                        iniciada</label>
+                </div>
+                <!-- Botón de Inicio de Sesión -->
+                <button
+                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/25 transform active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4"
+                    type="submit">
+                    <a href="/htmls/Principal.html">Iniciar Sesión</a>
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Social Login Divider -->
+            <div class="relative my-10">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
+                </div>
+                <div class="relative flex justify-center text-sm uppercase">
+                    <span class="bg-background-light dark:bg-[#2d1a1f] px-4 text-slate-500 font-medium">O continua
+                        con</span>
+                </div>
+            </div>
+            <!-- Social Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    <img alt="Google Logo" class="w-5 h-5" data-alt="Google colorful logo icon"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm9Kl1i7c81Pfs7Kj2_jq-6q6HuoD2suI6_5nr2z_XYKdXL5-UxT6SVnjVhu-L9Tvrx7fDuQ86TF9tQ1y2p4Gf2hgGPj-GU_TQ6yGBah98Z_ybmSm498RlfesPrA0troAZFfk1IPTRsiTZnv1mOQZ7qVswzeAMl5ygXI74Y2mzrMszc-rxZOb0t5d-o9ahwsrcjpgVV9-FdVECSQi8iyUtDGtQtciuCAv9bav_DoQ21vxwjBWoYjNhdhkAP1fibkb9-CzzVvcP6w" />
+                    <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Google</span>
+                </button>
+                <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    <img alt="Apple Logo" class="w-5 h-5 dark:invert" data-alt="Apple minimalist logo icon"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyC5BFJvI313XxJyhD8qY__ztLzI5lno8Z0kIO-nOVCu-cTtOLqCkmV6xQGHJC-cLc60ivcQJuA2mRv6ZxP13tOYh8VdlUXQ22tFQLFZoCp-h07cg6czT5xmnLY8Ty7mkA5ONWN7_qzyHDYSBJsbC6zW-mbeBC8hvmS3gkFNhNyfYElq5rP4gmJvRmLJlkH9edQMF8EbvwyVx1xYaNtVB_bVFA1cJQruxU_4Q6hrqmIYaqxb3p9j9nFgj_X9QmDRtBQN9qsReK1A" />
+                    <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Apple</span>
+                </button>
+            </div>
+            <!-- Footer Link -->
+            <footer class="mt-12 text-center">
+                <p class="text-slate-600 dark:text-slate-400">
+                    ¿No tienes una cuenta?
+                    <a class="text-primary font-bold hover:underline" href="#">Regístrate aquí</a>
+                </p>
+            </footer>
         </div>
-        <!-- Recordarme (Opcional pero añade realismo) -->
-        <div class="flex items-center px-1">
-          <input
-            class="w-4 h-4 text-primary bg-white dark:bg-background-dark border-slate-300 dark:border-slate-700 rounded focus:ring-primary focus:ring-offset-0"
-            id="remember" type="checkbox" />
-          <label class="ml-2 text-sm text-slate-600 dark:text-slate-400" for="remember">Mantener sesión iniciada</label>
-        </div>
-        <!-- Botón de Inicio de Sesión -->
-        <button
-          class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/25 transform active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4"
-          type="submit">
-          <span>Iniciar Sesión</span>
-          <span class="material-symbols-outlined text-xl">arrow_forward</span>
-        </button>
-      </form>
-      <!-- Social Login Divider -->
-      <div class="relative my-10">
-        <div class="absolute inset-0 flex items-center">
-          <div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
-        </div>
-        <div class="relative flex justify-center text-sm uppercase">
-          <span class="bg-background-light dark:bg-[#2d1a1f] px-4 text-slate-500 font-medium">O continua con</span>
-        </div>
-      </div>
-      <!-- Social Buttons -->
-      <div class="grid grid-cols-2 gap-4">
-        <button
-          class="flex items-center justify-center gap-2 py-3 px-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-          <img alt="Google Logo" class="w-5 h-5" data-alt="Google colorful logo icon"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm9Kl1i7c81Pfs7Kj2_jq-6q6HuoD2suI6_5nr2z_XYKdXL5-UxT6SVnjVhu-L9Tvrx7fDuQ86TF9tQ1y2p4Gf2hgGPj-GU_TQ6yGBah98Z_ybmSm498RlfesPrA0troAZFfk1IPTRsiTZnv1mOQZ7qVswzeAMl5ygXI74Y2mzrMszc-rxZOb0t5d-o9ahwsrcjpgVV9-FdVECSQi8iyUtDGtQtciuCAv9bav_DoQ21vxwjBWoYjNhdhkAP1fibkb9-CzzVvcP6w" />
-          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Google</span>
-        </button>
-        <button
-          class="flex items-center justify-center gap-2 py-3 px-4 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-          <img alt="Apple Logo" class="w-5 h-5 dark:invert" data-alt="Apple minimalist logo icon"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyC5BFJvI313XxJyhD8qY__ztLzI5lno8Z0kIO-nOVCu-cTtOLqCkmV6xQGHJC-cLc60ivcQJuA2mRv6ZxP13tOYh8VdlUXQ22tFQLFZoCp-h07cg6czT5xmnLY8Ty7mkA5ONWN7_qzyHDYSBJsbC6zW-mbeBC8hvmS3gkFNhNyfYElq5rP4gmJvRmLJlkH9edQMF8EbvwyVx1xYaNtVB_bVFA1cJQruxU_4Q6hrqmIYaqxb3p9j9nFgj_X9QmDRtBQN9qsReK1A" />
-          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Apple</span>
-        </button>
-      </div>
-      <!-- Footer Link -->
-      <footer class="mt-12 text-center">
-        <p class="text-slate-600 dark:text-slate-400">
-          ¿No tienes una cuenta?
-          <a class="text-primary font-bold hover:underline" href="#">Regístrate aquí</a>
-        </p>
-      </footer>
     </div>
-  </div>
 </body>
 
 </html>
